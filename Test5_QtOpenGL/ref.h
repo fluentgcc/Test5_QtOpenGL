@@ -4,6 +4,8 @@
 
 namespace Graphics
 {
+//	todo;
+#define VL_CHECK(expr) { if(!(expr)) { } }
 	//------------------------------------------------------------------------------
 	// ref
 	//------------------------------------------------------------------------------
@@ -19,11 +21,11 @@ namespace Graphics
 		// 'const' is required as the copy constructor must have this signature.
 		ref(const ref& other)
 		{
-			mObject = NULL;
+			mObject = nullptr;
 			*this = other;
 		}
 
-		ref(const T* object = NULL)
+		ref(const T* object = nullptr)
 		{
 			mObject = const_cast<T*>(object);
 			if (mObject)
@@ -32,7 +34,7 @@ namespace Graphics
 
 		template<class T2> ref(const ref<T2>& other)
 		{
-			mObject = NULL;
+			mObject = nullptr;
 			*this = other;
 		}
 
@@ -40,7 +42,7 @@ namespace Graphics
 		{
 			if (mObject)
 				mObject->decReference();
-			mObject = NULL;
+			mObject = nullptr;
 		}
 
 		// 'const' is required because operator= must have this signature.
@@ -96,7 +98,7 @@ namespace Graphics
 
 		bool operator<(const ref& other) const { return mObject < other.mObject; }
 
-		operator bool() const { return mObject != NULL; }
+		operator bool() const { return mObject != nullptr; }
 
 	protected:
 		T* mObject;

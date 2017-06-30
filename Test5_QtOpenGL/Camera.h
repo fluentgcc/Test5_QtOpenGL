@@ -83,6 +83,7 @@ namespace Graphics
 		//---------------------------------------------------
 		glm::mat4 getViewMatrix();
 		glm::mat4 getProjectionMatrix();
+		glm::mat4 getPVMatrix();
 
 		//---------------------------------------------------
 			//注意：以下坐标转换中的Viewport下坐标（x, y）都是归一化到 (0, 1)上的

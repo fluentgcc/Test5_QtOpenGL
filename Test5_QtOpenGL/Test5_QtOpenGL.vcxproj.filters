@@ -84,6 +84,33 @@
     <ClCompile Include="Object.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Root.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Primitive.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="MainWindow.h">
@@ -134,6 +161,33 @@
       <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="IMutex.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Root.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitive.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
       <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>

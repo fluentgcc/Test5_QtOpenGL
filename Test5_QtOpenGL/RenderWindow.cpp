@@ -39,7 +39,6 @@ RenderWindow::~RenderWindow()
 
 void RenderWindow::initializeGL()
 {
-
 	glbinding::Binding::initialize();
 
 	glbinding_error(true);
@@ -50,9 +49,6 @@ void RenderWindow::initializeGL()
 		<< "OpenGL Renderer: " << glbinding::ContextInfo::renderer() << std::endl;
 
 	auto ver = glbinding::ContextInfo::version();
-
-
-
 
 	glClearColor(0.3, 0.0, 0.3, 1.0);
 }

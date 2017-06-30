@@ -32,8 +32,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>D:\Libs\Common\glbinding\install\include;D:\Libs\Math\glm;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Libs\Common\glbinding\install\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Libs\Common\glbinding\install\include;D:\Libs\Math\glm;D:\Libs\OpenCV\install\vs2017_64\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Libs\Common\glbinding\install\lib;D:\Libs\OpenCV\install\vs2017_64\x64\vc15\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
@@ -52,7 +52,7 @@
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5OpenGLd.lib;Qt5Widgetsd.lib;opengl32.lib;glu32.lib;glbindingd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5OpenGLd.lib;Qt5Widgetsd.lib;opengl32.lib;glu32.lib;glbindingd.lib;opencv_core320d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -72,6 +72,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Buffer.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Cube.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_MainWindow.cpp">
@@ -93,10 +94,18 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GLSLShader.cpp" />
+    <ClCompile Include="Light.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Primitive.cpp" />
     <ClCompile Include="RenderWindow.cpp" />
+    <ClCompile Include="Root.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="vector_t.c" />
     <ClCompile Include="VertexAttribute.cpp" />
@@ -127,14 +136,23 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Buffer.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Cube.h" />
     <ClInclude Include="GeneratedFiles\ui_MainWindow.h" />
     <ClInclude Include="GLSLShader.h" />
     <ClInclude Include="IMutex.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Platform.h" />
+    <ClInclude Include="Primitive.h" />
     <ClInclude Include="ref.h" />
+    <ClInclude Include="Root.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="vector_t.h" />
     <ClInclude Include="VertexAttribute.h" />

@@ -1,19 +1,11 @@
 #pragma once
 
-#include "VertexBuffer.h"
-#include "Transform.h"
+#include "Node.h"
 
 namespace Graphics
 {
-	class Cube : public Object
+	class Cube : public Node
 	{
-	public:
 
-		void setTransform(const Transform* trans) { this->transform_ = trans; }
-
-	private:
-		VertexBuffer* vbo_;
-
-		ref<Transform> transform_;
 	};
 }
