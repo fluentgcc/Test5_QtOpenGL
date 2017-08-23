@@ -12,6 +12,7 @@ using namespace Graphics;
 Camera::Camera()
 {
 	wClip_ = 1.0;
+	ortho_scale_ = 1.0;
 }
 
 
@@ -264,15 +265,15 @@ void Camera::zoom(double amount)
 	{
 		return;
 	}
-	//todo
+	
  	if (projection_type_ == Camera::Ortho )
  	{
- 		this->ortho_scale_ /= amount;
+ 		this->ortho_scale_ *= amount;
 
-		this->ortho_left_ *= this->ortho_scale_;
-		this->ortho_right_ *= this->ortho_scale_;
-		this->ortho_top_ *= this->ortho_scale_;
-		this->ortho_bottom_ *= this->ortho_scale_;
+		this->ortho_left_ *= amount;
+		this->ortho_right_ *= amount;
+		this->ortho_top_ *= amount;
+		this->ortho_bottom_ *= amount;
 
 		this->computeViewMatrix();
  	}
@@ -280,8 +281,6 @@ void Camera::zoom(double amount)
  	{
  		this->setFovy(this->perspective_fovy_radians_ / amount);
  	}
-
-
 }
 
 void Camera::setFovy(float fovyDegrees)
@@ -324,6 +323,9 @@ void Camera::setPerspective(float fovy, float aspect, float near /*= 0.1f*/, flo
 	this->projection_type_ = Camera::Perspective;
 
 	this->perspective_fovy_radians_ = glm::radians(fovy);
+	this->perspective_aspect_ = aspect;
+	this->z_near_ = near;
+	this->z_far_ = far;
 	this->computeProjectionMatrix();
 }
 
@@ -331,7 +333,12 @@ void Camera::setOrtho(float left, float right, float bottom, float top, float ne
 {
 	this->projection_type_ = Camera::Ortho;
 
-	this->m_projection_ = glm::ortho(left, right, bottom, top, near, far);
+	this->ortho_left_ = left;
+	this->ortho_right_ = right; 
+	this->ortho_bottom_ = bottom;
+	this->ortho_top_ = top;
+	this->z_near_ = near;
+	this->z_far_ = far;
 	this->computeProjectionMatrix();
 }
 
@@ -343,6 +350,11 @@ glm::mat4 Camera::getViewMatrix()
 glm::mat4 Camera::getProjectionMatrix()
 {
 	return this->m_projection_;
+}
+
+glm::mat4 Camera::getPVMatrix()
+{
+	return this->m_projection_ * this->m_view_;
 }
 
 

@@ -5,8 +5,8 @@
 #include "Texture.h"
 
 #include <vector>
-#include "Buffer.h"
 
+#include "VertexBuffer.h"
 
 /**
 图元对象;
@@ -22,17 +22,21 @@ namespace Graphics
 		Primitive();
 		virtual ~Primitive();
 
-		void renderStart();
-		void renderDraw();
-		void renderFinish();
+		void render();
 
+		void setup();
+
+	private:
+		void renderSetup();
+		void renderFinish();
 	private:
 		
 		//材质
 		ref<Material> material_;
-
-
 		
+		ref<VertexBuffer> vbo_;
+
+		gl::GLenum renderMode_;
 	};
 
 }

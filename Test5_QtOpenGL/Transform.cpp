@@ -1,39 +1,20 @@
 #include "Transform.h"
 
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/geometric.hpp>
+
+#include "Node.h"
+
 using namespace Graphics;
 
-void Transform::reset()
+Graphics::Transform::Transform()
 {
-	this->mat_ = glm::mat4(1.0);
+	this->setPosition({ 0.f, 0.f, 0.f });
+	this->setOrientation({ 0.f, 0.f, 0.f });
+	this->setScale(1.0);
+
 }
 
-void Graphics::Transform::translate(glm::vec3 & xyz)
+Graphics::Transform::~Transform()
 {
-}
-
-void Graphics::Transform::rotate(double angle, glm::vec3 & axis)
-{
-}
-
-void Graphics::Transform::scale(glm::vec3 & xyz_factor)
-{
-}
-
-void Graphics::Transform::rotate(glm::quat & quat)
-{
-}
-
-glm::vec3 Graphics::Transform::getTransform()
-{
-	return glm::vec3();
-}
-
-glm::quat Graphics::Transform::getRotate()
-{
-	return glm::quat();
-}
-
-glm::vec3 Graphics::Transform::getScale()
-{
-	return glm::vec3();
 }

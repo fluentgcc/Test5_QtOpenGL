@@ -37,8 +37,36 @@ void Scene::removeNode(Node * node)
 
 		this->nodes_.erase(it);
 	}
+}
 
+void Scene::removeNodeByName(const std::string & name)
+{
+	for (auto it = this->nodes_.begin(); it != this->nodes_.end();)
+	{
+		if ((*it)->getName() == name)
+		{
+			it = this->nodes_.erase(it);
+		}
+		else
+		{
+			++it;
+		}
+	}
 
+}
+
+Node * Scene::getNodeByName(const std::string & name)
+{
+	size_t size = this->nodes_.size();
+	for (size_t i = 0; i < size; i++)
+	{
+		if (this->nodes_[i]->getName() == name)
+		{
+			return this->nodes_[i].get();
+		}
+	}
+
+	return nullptr;
 }
 
 void Scene::addLight(Light * light)
@@ -67,14 +95,41 @@ void Scene::removeLight(Light * light)
 void Scene::render()
 {
 	//Time log begin;
-	//emit startEvent;
-
-	this->deviceRender();
-
-	//emit endEvent;
+	this->renderStart();
+	this->renderDraw();
+	this->renderFinish();
 
 }
 
+void Graphics::Scene::setCamera(Camera * camera)
+{
+	this->camera_ = camera;
+}
+
+
+void Scene::renderStart()
+{
+	//todo
+	//uniform; use light;
+
+}
+
+void Scene::renderDraw()
+{
+	size_t length = this->nodes_.size();
+
+	Transform norm;
+	for (size_t i = 0; i < length; i++)
+	{
+		this->nodes_[i]->render(this,norm);
+	}
+
+}
+
+void Scene::renderFinish()
+{
+	//todo;
+}
 
 bool Scene::hasNode(Node * node)
 {

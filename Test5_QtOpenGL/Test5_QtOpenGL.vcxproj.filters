@@ -60,18 +60,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_RenderWindow.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="GLSLShader.cpp">
-      <Filter>OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="vector_t.c">
-      <Filter>OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="VertexAttribute.cpp">
-      <Filter>OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="VertexBuffer.cpp">
-      <Filter>OpenGL</Filter>
-    </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
@@ -96,19 +84,28 @@
     <ClCompile Include="Root.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="Primitive.cpp">
+    <ClCompile Include="Light.cpp">
       <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\VertexBuffer.cpp">
+      <Filter>OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\Shader.cpp">
+      <Filter>OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\VertexAttribute.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\Buffer.cpp">
+      <Filter>OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\OpenGLInit.cpp">
+      <Filter>OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\Texture.cpp">
+      <Filter>OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="Material.cpp">
-      <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="Buffer.cpp">
-      <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="Light.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
   </ItemGroup>
@@ -129,21 +126,6 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_MainWindow.h">
       <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GLSLShader.h">
-      <Filter>OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="Platform.h">
-      <Filter>OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="vector_t.h">
-      <Filter>OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="VertexAttribute.h">
-      <Filter>OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="VertexBuffer.h">
-      <Filter>OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Graphics</Filter>
@@ -175,19 +157,25 @@
     <ClInclude Include="Root.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Primitive.h">
+    <ClInclude Include="Light.h">
       <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\VertexBuffer.h">
+      <Filter>OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\Shader.h">
+      <Filter>OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\Buffer.h">
+      <Filter>OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\OpenGLInit.h">
+      <Filter>OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\Texture.h">
+      <Filter>OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="Material.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Buffer.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Light.h">
       <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>

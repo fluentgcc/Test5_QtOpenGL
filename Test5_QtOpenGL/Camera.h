@@ -68,8 +68,8 @@ namespace Graphics
 
 		//--------------------------------------------------	
 
-			//设置投影变换;
-			//透视投影1:
+			/**设置投影变换;*/
+		//透视投影1:
 		void setFrustum(float left, float right, float bottom, float top, float near = 0.1f, float far = 10000.0f);
 		//透视投影2：(fovy:角度, aspect:近平面width/height);
 		void setPerspective(float fovy, float aspect, float near = 0.1f, float far = 10000.0f);

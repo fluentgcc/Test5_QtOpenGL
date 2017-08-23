@@ -8,6 +8,7 @@
 #include "RenderWindow.h"
 #include <iostream>
 
+#include "Root.h"
 
 void glbinding_error(bool enable)
 {
@@ -50,17 +51,19 @@ void RenderWindow::initializeGL()
 
 	auto ver = glbinding::ContextInfo::version();
 
-	glClearColor(0.3, 0.0, 0.3, 1.0);
+	Graphics::Root::instance()->init();
+
+	gl::glClearColor(0.3, 0.0, 0.3, 1.0);
 }
 
 void RenderWindow::resizeGL(int w, int h)
 {
-	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
+	gl::glViewport(0, 0, (gl::GLsizei)w, (gl::GLsizei)h);
 }
 
 void RenderWindow::paintGL()
 {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	gl::glClear(gl::GL_COLOR_BUFFER_BIT | gl::GL_DEPTH_BUFFER_BIT);
 
 
 }
